@@ -1,0 +1,71 @@
+{
+  "name": "analyse-financiere-backend",
+  "version": "1.0.0",
+  "description": "Backend pour l'application d'analyse financière avec intelligence artificielle Google Gemini",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "prod": "NODE_ENV=production node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-db": "node -e \"require('./config/database.js').initDatabase().then(() => process.exit(0)).catch(() => process.exit(1))\"",
+    "health-check": "curl -f http://localhost:5000/health || exit 1",
+    "lint": "eslint .",
+    "setup": "npm install && npm run init-db"
+  },
+  "keywords": [
+    "finance",
+    "analysis",
+    "ai",
+    "gemini",
+    "express",
+    "postgresql",
+    "backend",
+    "api",
+    "financial-analysis",
+    "business-intelligence"
+  ],
+  "author": "Ton Nom <ton.email@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ton-username/analyse-financiere-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ton-username/analyse-financiere-backend/issues"
+  },
+  "homepage": "https://github.com/ton-username/analyse-financiere-backend#readme",
+  "files": [
+    "config/",
+    "controllers/",
+    "middleware/",
+    "models/",
+    "routes/",
+    "utils/",
+    "server.js",
+    ".env.example",
+    "README.md"
+  ]
+}
